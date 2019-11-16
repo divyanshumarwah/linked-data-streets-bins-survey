@@ -1,6 +1,6 @@
 #  Interactive ontology-driven application
 
-A survey on types ob Bins in and around Dublin City Center.
+A survey on types of Bins in and around Dublin City Center.
 
 ## Tools Used
 ```
