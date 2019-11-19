@@ -1,10 +1,13 @@
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX rdf-schema:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf-syntax-ns:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT ?surfaceTypeName (COUNT(*) AS ?binCount)
     WHERE {
     ?temp1  rdf-schema:binNo ?binNo.
-	?temp1  rdf-schema:street ?streetName
-	BIND(IRI(CONCAT("http://www.example.org/bin-features/", ENCODE_FOR_URI(?binNo))) AS ?binFeaturesURI)
+    ?temp1  rdf-schema:street ?streetName
+    BIND(IRI(CONCAT("http://www.example.org/bin-features/", ENCODE_FOR_URI(?binNo))) AS ?binFeaturesURI)
     ?binFeaturesURI  foaf:advertSpace ?hasAdvertSpace.
-	BIND(IRI(CONCAT("http://www.example.org/street/", ENCODE_FOR_URI(?streetName))) AS ?streetURI)
+    BIND(IRI(CONCAT("http://www.example.org/street/", ENCODE_FOR_URI(?streetName))) AS ?streetURI)
     ?streetURI  rdf-schema:surfaceTypeCode ?surfaceTypeCodeURI.
     ?surfaceTypeCodeURI  foaf:surfaceTypeName ?surfaceTypeName.
     FILTER (regex(str(?temp1), "bin") && regex(str(?hasAdvertSpace), "TRUE"))

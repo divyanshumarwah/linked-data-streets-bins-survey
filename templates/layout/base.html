@@ -11,6 +11,7 @@
     <link href="../../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../../static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="../../static/css/admin.css" rel="stylesheet">
+    <link href='https://codemirror.net/lib/codemirror.css' rel='stylesheet' type='text/css'/>
 
     <link href="https://cdn.jsdelivr.net/g/yasqe@2.2(yasqe.min.css),yasr@2.4(yasr.min.css)" rel='stylesheet' type='text/css' />
 </head>
@@ -128,5 +129,16 @@
 <script src="https://cdn.jsdelivr.net/yasr/2.4/yasr.bundled.min.js"></script>
 <script src="https://cdn.jsdelivr.net/yasqe/2.2/yasqe.bundled.min.js"></script>
 <script src="../../static/js/demo/editor.js"></script>
+
+<script src="https://codemirror.net/lib/codemirror.js"></script>
+<script src='https://codemirror.net/mode/sparql/sparql.js'></script>
+<script>
+    $(document).ready(function() {
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            mode: "application/sparql-query",
+            matchBrackets: true
+        });
+    });
+</script>
 </body>
 </html>

@@ -21,7 +21,7 @@ def query_one():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/1')
+    return render_template("index.html", results=results, question=question, path='/query/1', query=query)
 
 @app.route("/query/2")
 def query_two():
@@ -32,7 +32,7 @@ def query_two():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/2')
+    return render_template("index.html", results=results, question=question, path='/query/2', query=query)
 
 @app.route("/query/3")
 def query_three():
@@ -43,7 +43,7 @@ def query_three():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/3')
+    return render_template("index.html", results=results, question=question, path='/query/3', query=query)
 
 @app.route("/query/4")
 def query_four():
@@ -54,7 +54,7 @@ def query_four():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/4')
+    return render_template("index.html", results=results, question=question, path='/query/4', query=query)
 
 @app.route("/query/5")
 def query_five():
@@ -65,7 +65,7 @@ def query_five():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/5')
+    return render_template("index.html", results=results, question=question, path='/query/5', query=query)
 
 @app.route("/query/6")
 def query_six():
@@ -76,7 +76,7 @@ def query_six():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/6')
+    return render_template("index.html", results=results, question=question, path='/query/6', query=query)
 
 @app.route("/query/7")
 def query_seven():
@@ -87,7 +87,7 @@ def query_seven():
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-    return render_template("index.html", results=results, question=question, path='/query/7')
+    return render_template("index.html", results=results, question=question, path='/query/7', query=query)
 
 
 if __name__ == "__main__":  # on running python app.py

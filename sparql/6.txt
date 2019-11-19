@@ -1,4 +1,7 @@
- SELECT ?streetName(COUNT(*) AS ?binCount) ?lineLength (xsd:float(?binCount)*xsd:float(100)/xsd:float(?lineLength) AS ?binDensity)
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX rdf-schema:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf-syntax-ns:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?streetName(COUNT(*) AS ?binCount) ?lineLength (xsd:float(?binCount)*xsd:float(100)/xsd:float(?lineLength) AS ?binDensity)
     WHERE {
     ?temp1  rdf-schema:binNo ?binNo.
     BIND(IRI(CONCAT("http://www.example.org/street/", ENCODE_FOR_URI(?binNo))) AS ?streetBinURI)
