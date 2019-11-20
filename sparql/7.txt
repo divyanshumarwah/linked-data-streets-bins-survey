@@ -13,4 +13,3 @@ SELECT ?surfaceTypeName (COUNT(*) AS ?binCount)
     FILTER (regex(str(?temp1), "bin") && regex(str(?hasAdvertSpace), "TRUE"))
     }
     GROUP BY ?surfaceTypeName
-    ORDER BY ?binCount

@@ -10,3 +10,4 @@ SELECT ?surfaceTypeName (COUNT(*) AS ?count)
     FILTER (regex(str(?temp1), "bin"))
     }
     GROUP BY ?surfaceTypeName
+    ORDER BY ?surfaceTypeName

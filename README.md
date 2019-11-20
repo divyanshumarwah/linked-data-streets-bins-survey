@@ -6,6 +6,9 @@ A survey on types of Bins in and around Dublin City Center.
 ```
 1. Python and Flask
 2. Virtuoso TripleStore
+3. Juma
+4. Protege
+5. Widoco
 ```
 
 ## Dataset Used

@@ -13,3 +13,4 @@ SELECT ?ward ?surfaceTypeName (COUNT(*) AS ?count)
     FILTER (regex(str(?temp1), "bin"))
     }
     GROUP BY ?ward ?surfaceTypeName
+    ORDER BY ?ward

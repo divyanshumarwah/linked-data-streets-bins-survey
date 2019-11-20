@@ -14,7 +14,7 @@ def editor():
 
 @app.route("/query/1")
 def query_one():
-    question = "Surface of road types Electoral division (DED)wise"
+    question = "Find the count of each street surface type (concrete,macadam,etc) for every Electoral division (Ward-DED)"
     with open('sparql/1.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -25,7 +25,7 @@ def query_one():
 
 @app.route("/query/2")
 def query_two():
-    question = "How many dustbins corresponds to which street class code"
+    question = "How many bins are present on each street class type (local road, national primary, etc.)?"
     with open('sparql/2.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -36,7 +36,7 @@ def query_two():
 
 @app.route("/query/3")
 def query_three():
-    question = "Bins damaged with street name and street type"
+    question = "Where the damaged bins are located along with the street type of the corresponding street?"
     with open('sparql/3.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -47,7 +47,7 @@ def query_three():
 
 @app.route("/query/4")
 def query_four():
-    question = "No of roads built in a particular electoral division (DED) in last 5 years"
+    question = "How many roads were built in each Dublin City Council (DCC) area over past 5 years?"
     with open('sparql/4.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -58,7 +58,7 @@ def query_four():
 
 @app.route("/query/5")
 def query_five():
-    question = "Street types Electoral division (DED)wise"
+    question = "Find the count of each street type for every Electoral division (Ward-DED)"
     with open('sparql/5.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -69,7 +69,7 @@ def query_five():
 
 @app.route("/query/6")
 def query_six():
-    question = "Bin Density on roads per 100m "
+    question = "Calculate the bin density on each street. Formula used = No of bins/ Line Lenght of the street"
     with open('sparql/6.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -80,7 +80,7 @@ def query_six():
 
 @app.route("/query/7")
 def query_seven():
-    question = "Bins available for advertisement on a particular street surface type"
+    question = "How many bins are available for advertisement on a particular street surface type?"
     with open('sparql/7.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -88,6 +88,29 @@ def query_seven():
         results = sparql.query().convert()
 
     return render_template("index.html", results=results, question=question, path='/query/7', query=query)
+
+@app.route("/query/8")
+def query_eight():
+    question = "How many bins are present in each DCC area?"
+    with open('sparql/8.txt','r') as queryData:
+        query = str(queryData.read())
+        sparql.setQuery(query)
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+
+    return render_template("index.html", results=results, question=question, path='/query/8', query=query)
+
+
+@app.route("/query/9")
+def query_nine():
+    question = "Which city centre streets were built in and before 2000 and compute the total number of bins present on them?"
+    with open('sparql/9.txt','r') as queryData:
+        query = str(queryData.read())
+        sparql.setQuery(query)
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+
+    return render_template("index.html", results=results, question=question, path='/query/9', query=query)
 
 
 if __name__ == "__main__":  # on running python app.py
