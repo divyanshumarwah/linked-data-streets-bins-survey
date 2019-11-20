@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology>
+        <rdfs:comment>This ontology describes the relation between Street and Bins in Dublin City Centre along with some extra features regarding their surrounding.</rdfs:comment>
+        <rdfs:label>Street And Bin Ontology</rdfs:label>
+        <versionInfo>Version 1.1</versionInfo>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#binType -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#binType">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/BinTypeMapping"/>
+        <rdfs:label>binType</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#dccCode -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#dccCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/DCCArea"/>
+        <rdfs:label>dccCode</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#hasBinFeature -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#hasBinFeature">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/BinFeatures"/>
+        <rdfs:label>binFeature</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#hasFeature -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#hasFeature">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:label>hasStreetFeature</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#liesInZone -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#liesInZone">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/ZonalArea"/>
+        <rdfs:label>liesInZone</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#onStreet -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#onStreet">
+        <inverseOf rdf:resource="http://xmlns.com/foaf/0.1/containsBin"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:label>onStreet</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#streetClassCode -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#streetClassCode">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/StreetClassCode"/>
+        <rdfs:label>streetClassCode</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode -->
+
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/SurfaceType"/>
+        <rdfs:label>surfaceTypeCode</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/accessible -->
+
+
+    <ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/accessible">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:isDefinedBy>check the accessibility of bin</rdfs:isDefinedBy>
+        <rdfs:label>accessible</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/containsBin -->
+
+
+    <ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/containsBin">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/hasName -->
+
+
+    <ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Language"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:isDefinedBy>Object property to check name</rdfs:isDefinedBy>
+        <rdfs:label>hasName</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#binNo -->
+
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#binNo">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Bin"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number on bin</rdfs:comment>
+        <rdfs:label>BinNo</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#streetName -->
+
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#streetName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Bin Location</rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/advertSpace -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/advertSpace">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/BinFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Adverstisement space</rdfs:comment>
+        <rdfs:label>AdvertSpace</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/bidsArea -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/bidsArea">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/ZonalArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Zonal Area BIDS</rdfs:comment>
+        <rdfs:label>BIDSArea</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/category -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/category">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/BinTypeMapping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Bin Type Category</rdfs:comment>
+        <rdfs:label>Category</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/cbdArea -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/cbdArea">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/ZonalArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>CBD Zonal Area</rdfs:comment>
+        <rdfs:label>CBDArea</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/cigButtContainer -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/cigButtContainer">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/BinFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>bin contains cigratte butt container</rdfs:comment>
+        <rdfs:label>CigaretteButtContainer</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/damaged -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/damaged">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/BinFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Bin is damaged</rdfs:comment>
+        <rdfs:label>Damaged</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/dccArea -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/dccArea">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/DCCArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>DCC Area where street lies</rdfs:comment>
+        <rdfs:label>DCCArea</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/english -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/english">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>English Name of Street</rdfs:comment>
+        <rdfs:label>English</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/footpath -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/footpath">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>accessibility through footpath</rdfs:comment>
+        <rdfs:label>Footpath</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/irish -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/irish">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Irsih Name</rdfs:comment>
+        <rdfs:label>Irish</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lineLength -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lineLength">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>street features of line length</rdfs:comment>
+        <rdfs:label>LineLength</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/park -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/park">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Accesible through location park</rdfs:comment>
+        <rdfs:label>Park</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/publicBuilding -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/publicBuilding">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>accessible through public building</rdfs:comment>
+        <rdfs:label>PublicBuilding</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/residential -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/residential">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>accessible through residential</rdfs:comment>
+        <rdfs:label>Residential</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/retailShop -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/retailShop">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>accessibility location retail/shop</rdfs:comment>
+        <rdfs:label>RetailShop</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/roadFinish -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/roadFinish">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Define the location of where Street Ends</rdfs:comment>
+        <rdfs:label>RoadFinish</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/roadStart -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/roadStart">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Start of Road</rdfs:comment>
+        <rdfs:label>RoadStart</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/routeNo -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/routeNo">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Route No for road</rdfs:comment>
+        <rdfs:label>RouteNo</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/school -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/school">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>accessible through school</rdfs:comment>
+        <rdfs:label>School</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/streetClass -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/streetClass">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetClassCode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Street Class Code</rdfs:comment>
+        <rdfs:label>StreetClass</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/surfaceTypeName -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/surfaceTypeName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/SurfaceType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Surface types are 1-asphalt, 2-concrete, 3-macadam, 4-setts, 5-flags</rdfs:comment>
+        <rdfs:label>SurfaceTypeName</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/ward -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/ward">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Street"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Tells the ward of street</rdfs:comment>
+        <rdfs:label>Ward</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/yearBuilt -->
+
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/yearBuilt">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Year when built</rdfs:comment>
+        <rdfs:label>YearBuilt</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/AccessibilityArea -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/AccessibilityArea">
+        <rdfs:comment>accessible through which location</rdfs:comment>
+        <rdfs:label>Accessibility Area</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Bin -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Bin">
+        <rdfs:comment>information about bin like bin no, location,etc.</rdfs:comment>
+        <rdfs:label>Bin</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/BinFeatures -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/BinFeatures">
+        <rdfs:comment>features of the bins like contain cigratte butt container</rdfs:comment>
+        <rdfs:label>Bin Features</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/BinTypeMapping -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/BinTypeMapping">
+        <rdfs:comment>contains information bin type id and type of bin</rdfs:comment>
+        <rdfs:label>Bin Type Mapping</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/DCCArea -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/DCCArea">
+        <rdfs:comment>contains dcc area as north, south, cnetral,etc</rdfs:comment>
+        <rdfs:label>DCC Area</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Language -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Language">
+        <rdfs:comment>Language of street name</rdfs:comment>
+        <rdfs:label>Language</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Street -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Street">
+        <rdfs:comment>contains information about streets</rdfs:comment>
+        <rdfs:label>Street</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/StreetClassCode -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/StreetClassCode">
+        <rdfs:comment>information about street class coding as national highway</rdfs:comment>
+        <rdfs:label>Street Class Mapping</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/StreetFeatures -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/StreetFeatures">
+        <rdfs:comment>information about street features</rdfs:comment>
+        <rdfs:label>Street Features</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/SurfaceType -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/SurfaceType">
+        <rdfs:comment>information about street surface mapping such as asphalt,etc</rdfs:comment>
+        <rdfs:label>Surface Type Mapping</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/ZonalArea -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/ZonalArea">
+        <rdfs:comment>information about bids area and CBD area</rdfs:comment>
+        <rdfs:label>Zonal Area</rdfs:label>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/AccessibilityArea"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Bin"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/BinFeatures"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/BinTypeMapping"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/DCCArea"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Language"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Street"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/StreetClassCode"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/StreetFeatures"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/SurfaceType"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/ZonalArea"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.11) https://github.com/owlcs/owlapi/ -->
+
+
