@@ -183,7 +183,17 @@ rdfs:streetName rdf:type owl:DatatypeProperty ;
 
 ###  http://xmlns.com/foaf/0.1/dccCode
 <http://xmlns.com/foaf/0.1/dccCode> rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain <http://xmlns.com/foaf/0.1/DCCArea> ;
+                                    rdfs:domain <http://xmlns.com/foaf/0.1/DCCArea> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topDataProperty ;
+                                                  owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:integer
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topDataProperty ;
+                                                  owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:integer
+                                                ] ;
                                     rdfs:range xsd:integer .
 
 
@@ -293,7 +303,17 @@ rdfs:streetName rdf:type owl:DatatypeProperty ;
 
 ###  http://xmlns.com/foaf/0.1/streetClassCode
 <http://xmlns.com/foaf/0.1/streetClassCode> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <http://xmlns.com/foaf/0.1/StreetClassCode> ;
+                                            rdfs:domain <http://xmlns.com/foaf/0.1/StreetClassCode> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topDataProperty ;
+                                                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange xsd:integer
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topDataProperty ;
+                                                          owl:maxQualifiedCardinality "7"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange xsd:integer
+                                                        ] ;
                                             rdfs:range xsd:integer ;
                                             rdfs:comment "details aboust street classes such as national, national secondary" ;
                                             rdfs:label "Street Class Code" .
@@ -301,7 +321,17 @@ rdfs:streetName rdf:type owl:DatatypeProperty ;
 
 ###  http://xmlns.com/foaf/0.1/surfaceTypeCode
 <http://xmlns.com/foaf/0.1/surfaceTypeCode> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <http://xmlns.com/foaf/0.1/SurfaceType> ;
+                                            rdfs:domain <http://xmlns.com/foaf/0.1/SurfaceType> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topDataProperty ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange xsd:integer
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topDataProperty ;
+                                                          owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange xsd:integer
+                                                        ] ;
                                             rdfs:range xsd:integer ;
                                             rdfs:comment "types of surface such as asphalt, concrete,etc" ;
                                             rdfs:label "Surface Type Code" .

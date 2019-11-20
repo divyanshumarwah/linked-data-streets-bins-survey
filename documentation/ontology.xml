@@ -289,6 +289,20 @@
 
     <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/dccCode">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/DCCArea"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</maxQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </DatatypeProperty>
     
@@ -455,6 +469,20 @@
 
     <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/streetClassCode">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/StreetClassCode"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</maxQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>details aboust street classes such as national, national secondary</rdfs:comment>
         <rdfs:label>Street Class Code</rdfs:label>
@@ -467,6 +495,20 @@
 
     <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/surfaceTypeCode">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/SurfaceType"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</maxQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>types of surface such as asphalt, concrete,etc</rdfs:comment>
         <rdfs:label>Surface Type Code</rdfs:label>
