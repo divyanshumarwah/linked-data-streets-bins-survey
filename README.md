@@ -22,6 +22,7 @@ pip install requirements.txt
 ```
 
 ## Usage
+Start the virtuso server and run the following command
 
 ```
 python main.py
