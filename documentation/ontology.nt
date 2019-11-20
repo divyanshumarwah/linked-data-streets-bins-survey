@@ -1,0 +1,379 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+_:genid1 <http://www.w3.org/2000/01/rdf-schema#comment> "This ontology describes the relation between Street and Bins in Dublin City Centre along with some extra features regarding their surrounding." .
+_:genid1 <http://www.w3.org/2000/01/rdf-schema#label> "Street And Bin Ontology" .
+_:genid1 <http://www.w3.org/2002/07/owl#versionInfo> "Version 1.1" .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#binType
+<http://www.w3.org/2000/01/rdf-schema#binType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#binType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://www.w3.org/2000/01/rdf-schema#binType> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/BinTypeMapping> .
+<http://www.w3.org/2000/01/rdf-schema#binType> <http://www.w3.org/2000/01/rdf-schema#label> "binType" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#dccCode
+<http://www.w3.org/2000/01/rdf-schema#dccCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#dccCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.w3.org/2000/01/rdf-schema#dccCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#dccCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/DCCArea> .
+<http://www.w3.org/2000/01/rdf-schema#dccCode> <http://www.w3.org/2000/01/rdf-schema#label> "dccCode" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#hasBinFeature
+<http://www.w3.org/2000/01/rdf-schema#hasBinFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#hasBinFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://www.w3.org/2000/01/rdf-schema#hasBinFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/BinFeatures> .
+<http://www.w3.org/2000/01/rdf-schema#hasBinFeature> <http://www.w3.org/2000/01/rdf-schema#label> "binFeature" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#hasFeature
+<http://www.w3.org/2000/01/rdf-schema#hasFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#hasFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#hasFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://www.w3.org/2000/01/rdf-schema#hasFeature> <http://www.w3.org/2000/01/rdf-schema#label> "hasStreetFeature" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#liesInZone
+<http://www.w3.org/2000/01/rdf-schema#liesInZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#liesInZone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://www.w3.org/2000/01/rdf-schema#liesInZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/ZonalArea> .
+<http://www.w3.org/2000/01/rdf-schema#liesInZone> <http://www.w3.org/2000/01/rdf-schema#label> "liesInZone" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#onStreet
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/2002/07/owl#inverseOf> <http://xmlns.com/foaf/0.1/containsBin> .
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#onStreet> <http://www.w3.org/2000/01/rdf-schema#label> "onStreet" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#streetClassCode
+<http://www.w3.org/2000/01/rdf-schema#streetClassCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#streetClassCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#streetClassCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/StreetClassCode> .
+<http://www.w3.org/2000/01/rdf-schema#streetClassCode> <http://www.w3.org/2000/01/rdf-schema#label> "streetClassCode" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode
+<http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/SurfaceType> .
+<http://www.w3.org/2000/01/rdf-schema#surfaceTypeCode> <http://www.w3.org/2000/01/rdf-schema#label> "surfaceTypeCode" .
+# 
+# http://xmlns.com/foaf/0.1/accessible
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "check the accessibility of bin" .
+<http://xmlns.com/foaf/0.1/accessible> <http://www.w3.org/2000/01/rdf-schema#label> "accessible" .
+# 
+# http://xmlns.com/foaf/0.1/containsBin
+<http://xmlns.com/foaf/0.1/containsBin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/containsBin> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://xmlns.com/foaf/0.1/containsBin> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Bin> .
+# 
+# http://xmlns.com/foaf/0.1/hasName
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Language> .
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Street> .
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "Object property to check name" .
+<http://xmlns.com/foaf/0.1/hasName> <http://www.w3.org/2000/01/rdf-schema#label> "hasName" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#binNo
+<http://www.w3.org/2000/01/rdf-schema#binNo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2000/01/rdf-schema#binNo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Bin> .
+<http://www.w3.org/2000/01/rdf-schema#binNo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.w3.org/2000/01/rdf-schema#binNo> <http://www.w3.org/2000/01/rdf-schema#comment> "Number on bin" .
+<http://www.w3.org/2000/01/rdf-schema#binNo> <http://www.w3.org/2000/01/rdf-schema#label> "BinNo" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#streetName
+<http://www.w3.org/2000/01/rdf-schema#streetName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2000/01/rdf-schema#streetName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://www.w3.org/2000/01/rdf-schema#streetName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.w3.org/2000/01/rdf-schema#streetName> <http://www.w3.org/2000/01/rdf-schema#comment> "Bin Location" .
+<http://www.w3.org/2000/01/rdf-schema#streetName> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+# 
+# http://xmlns.com/foaf/0.1/advertSpace
+<http://xmlns.com/foaf/0.1/advertSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/advertSpace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/BinFeatures> .
+<http://xmlns.com/foaf/0.1/advertSpace> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/advertSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "Adverstisement space" .
+<http://xmlns.com/foaf/0.1/advertSpace> <http://www.w3.org/2000/01/rdf-schema#label> "AdvertSpace" .
+# 
+# http://xmlns.com/foaf/0.1/bidsArea
+<http://xmlns.com/foaf/0.1/bidsArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/bidsArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/ZonalArea> .
+<http://xmlns.com/foaf/0.1/bidsArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/bidsArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Zonal Area BIDS" .
+<http://xmlns.com/foaf/0.1/bidsArea> <http://www.w3.org/2000/01/rdf-schema#label> "BIDSArea" .
+# 
+# http://xmlns.com/foaf/0.1/category
+<http://xmlns.com/foaf/0.1/category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/category> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/BinTypeMapping> .
+<http://xmlns.com/foaf/0.1/category> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/category> <http://www.w3.org/2000/01/rdf-schema#comment> "Bin Type Category" .
+<http://xmlns.com/foaf/0.1/category> <http://www.w3.org/2000/01/rdf-schema#label> "Category" .
+# 
+# http://xmlns.com/foaf/0.1/cbdArea
+<http://xmlns.com/foaf/0.1/cbdArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/cbdArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/ZonalArea> .
+<http://xmlns.com/foaf/0.1/cbdArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/cbdArea> <http://www.w3.org/2000/01/rdf-schema#comment> "CBD Zonal Area" .
+<http://xmlns.com/foaf/0.1/cbdArea> <http://www.w3.org/2000/01/rdf-schema#label> "CBDArea" .
+# 
+# http://xmlns.com/foaf/0.1/cigButtContainer
+<http://xmlns.com/foaf/0.1/cigButtContainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/cigButtContainer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/BinFeatures> .
+<http://xmlns.com/foaf/0.1/cigButtContainer> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/cigButtContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "bin contains cigratte butt container" .
+<http://xmlns.com/foaf/0.1/cigButtContainer> <http://www.w3.org/2000/01/rdf-schema#label> "CigaretteButtContainer" .
+# 
+# http://xmlns.com/foaf/0.1/damaged
+<http://xmlns.com/foaf/0.1/damaged> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/damaged> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/BinFeatures> .
+<http://xmlns.com/foaf/0.1/damaged> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/damaged> <http://www.w3.org/2000/01/rdf-schema#comment> "Bin is damaged" .
+<http://xmlns.com/foaf/0.1/damaged> <http://www.w3.org/2000/01/rdf-schema#label> "Damaged" .
+# 
+# http://xmlns.com/foaf/0.1/dccArea
+<http://xmlns.com/foaf/0.1/dccArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/dccArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/DCCArea> .
+<http://xmlns.com/foaf/0.1/dccArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/dccArea> <http://www.w3.org/2000/01/rdf-schema#comment> "DCC Area where street lies" .
+<http://xmlns.com/foaf/0.1/dccArea> <http://www.w3.org/2000/01/rdf-schema#label> "DCCArea" .
+# 
+# http://xmlns.com/foaf/0.1/english
+<http://xmlns.com/foaf/0.1/english> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/english> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Language> .
+<http://xmlns.com/foaf/0.1/english> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/english> <http://www.w3.org/2000/01/rdf-schema#comment> "English Name of Street" .
+<http://xmlns.com/foaf/0.1/english> <http://www.w3.org/2000/01/rdf-schema#label> "English" .
+# 
+# http://xmlns.com/foaf/0.1/footpath
+<http://xmlns.com/foaf/0.1/footpath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/footpath> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/footpath> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/footpath> <http://www.w3.org/2000/01/rdf-schema#comment> "accessibility through footpath" .
+<http://xmlns.com/foaf/0.1/footpath> <http://www.w3.org/2000/01/rdf-schema#label> "Footpath" .
+# 
+# http://xmlns.com/foaf/0.1/irish
+<http://xmlns.com/foaf/0.1/irish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/irish> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Language> .
+<http://xmlns.com/foaf/0.1/irish> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/irish> <http://www.w3.org/2000/01/rdf-schema#comment> "Irsih Name" .
+<http://xmlns.com/foaf/0.1/irish> <http://www.w3.org/2000/01/rdf-schema#label> "Irish" .
+# 
+# http://xmlns.com/foaf/0.1/lineLength
+<http://xmlns.com/foaf/0.1/lineLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/lineLength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://xmlns.com/foaf/0.1/lineLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://xmlns.com/foaf/0.1/lineLength> <http://www.w3.org/2000/01/rdf-schema#comment> "street features of line length" .
+<http://xmlns.com/foaf/0.1/lineLength> <http://www.w3.org/2000/01/rdf-schema#label> "LineLength" .
+# 
+# http://xmlns.com/foaf/0.1/park
+<http://xmlns.com/foaf/0.1/park> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/park> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/park> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/park> <http://www.w3.org/2000/01/rdf-schema#comment> "Accesible through location park" .
+<http://xmlns.com/foaf/0.1/park> <http://www.w3.org/2000/01/rdf-schema#label> "Park" .
+# 
+# http://xmlns.com/foaf/0.1/publicBuilding
+<http://xmlns.com/foaf/0.1/publicBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/publicBuilding> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/publicBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/publicBuilding> <http://www.w3.org/2000/01/rdf-schema#comment> "accessible through public building" .
+<http://xmlns.com/foaf/0.1/publicBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "PublicBuilding" .
+# 
+# http://xmlns.com/foaf/0.1/residential
+<http://xmlns.com/foaf/0.1/residential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/residential> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/residential> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/residential> <http://www.w3.org/2000/01/rdf-schema#comment> "accessible through residential" .
+<http://xmlns.com/foaf/0.1/residential> <http://www.w3.org/2000/01/rdf-schema#label> "Residential" .
+# 
+# http://xmlns.com/foaf/0.1/retailShop
+<http://xmlns.com/foaf/0.1/retailShop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/retailShop> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/retailShop> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/retailShop> <http://www.w3.org/2000/01/rdf-schema#comment> "accessibility location retail/shop" .
+<http://xmlns.com/foaf/0.1/retailShop> <http://www.w3.org/2000/01/rdf-schema#label> "RetailShop" .
+# 
+# http://xmlns.com/foaf/0.1/roadFinish
+<http://xmlns.com/foaf/0.1/roadFinish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/roadFinish> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://xmlns.com/foaf/0.1/roadFinish> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/roadFinish> <http://www.w3.org/2000/01/rdf-schema#comment> "Define the location of where Street Ends" .
+<http://xmlns.com/foaf/0.1/roadFinish> <http://www.w3.org/2000/01/rdf-schema#label> "RoadFinish" .
+# 
+# http://xmlns.com/foaf/0.1/roadStart
+<http://xmlns.com/foaf/0.1/roadStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/roadStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://xmlns.com/foaf/0.1/roadStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/roadStart> <http://www.w3.org/2000/01/rdf-schema#comment> "Start of Road" .
+<http://xmlns.com/foaf/0.1/roadStart> <http://www.w3.org/2000/01/rdf-schema#label> "RoadStart" .
+# 
+# http://xmlns.com/foaf/0.1/routeNo
+<http://xmlns.com/foaf/0.1/routeNo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/routeNo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://xmlns.com/foaf/0.1/routeNo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://xmlns.com/foaf/0.1/routeNo> <http://www.w3.org/2000/01/rdf-schema#comment> "Route No for road" .
+<http://xmlns.com/foaf/0.1/routeNo> <http://www.w3.org/2000/01/rdf-schema#label> "RouteNo" .
+# 
+# http://xmlns.com/foaf/0.1/school
+<http://xmlns.com/foaf/0.1/school> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/school> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+<http://xmlns.com/foaf/0.1/school> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://xmlns.com/foaf/0.1/school> <http://www.w3.org/2000/01/rdf-schema#comment> "accessible through school" .
+<http://xmlns.com/foaf/0.1/school> <http://www.w3.org/2000/01/rdf-schema#label> "School" .
+# 
+# http://xmlns.com/foaf/0.1/streetClass
+<http://xmlns.com/foaf/0.1/streetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/streetClass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetClassCode> .
+<http://xmlns.com/foaf/0.1/streetClass> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/streetClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Street Class Code" .
+<http://xmlns.com/foaf/0.1/streetClass> <http://www.w3.org/2000/01/rdf-schema#label> "StreetClass" .
+# 
+# http://xmlns.com/foaf/0.1/surfaceTypeName
+<http://xmlns.com/foaf/0.1/surfaceTypeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/surfaceTypeName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/SurfaceType> .
+<http://xmlns.com/foaf/0.1/surfaceTypeName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/surfaceTypeName> <http://www.w3.org/2000/01/rdf-schema#comment> "Surface types are 1-asphalt, 2-concrete, 3-macadam, 4-setts, 5-flags" .
+<http://xmlns.com/foaf/0.1/surfaceTypeName> <http://www.w3.org/2000/01/rdf-schema#label> "SurfaceTypeName" .
+# 
+# http://xmlns.com/foaf/0.1/ward
+<http://xmlns.com/foaf/0.1/ward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/ward> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Street> .
+<http://xmlns.com/foaf/0.1/ward> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://xmlns.com/foaf/0.1/ward> <http://www.w3.org/2000/01/rdf-schema#comment> "Tells the ward of street" .
+<http://xmlns.com/foaf/0.1/ward> <http://www.w3.org/2000/01/rdf-schema#label> "Ward" .
+# 
+# http://xmlns.com/foaf/0.1/yearBuilt
+<http://xmlns.com/foaf/0.1/yearBuilt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/yearBuilt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+<http://xmlns.com/foaf/0.1/yearBuilt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://xmlns.com/foaf/0.1/yearBuilt> <http://www.w3.org/2000/01/rdf-schema#comment> "Year when built" .
+<http://xmlns.com/foaf/0.1/yearBuilt> <http://www.w3.org/2000/01/rdf-schema#label> "YearBuilt" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/AccessibilityArea
+<http://xmlns.com/foaf/0.1/AccessibilityArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/AccessibilityArea> <http://www.w3.org/2000/01/rdf-schema#comment> "accessible through which location" .
+<http://xmlns.com/foaf/0.1/AccessibilityArea> <http://www.w3.org/2000/01/rdf-schema#label> "Accessibility Area" .
+# 
+# http://xmlns.com/foaf/0.1/Bin
+<http://xmlns.com/foaf/0.1/Bin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Bin> <http://www.w3.org/2000/01/rdf-schema#comment> "information about bin like bin no, location,etc." .
+<http://xmlns.com/foaf/0.1/Bin> <http://www.w3.org/2000/01/rdf-schema#label> "Bin" .
+# 
+# http://xmlns.com/foaf/0.1/BinFeatures
+<http://xmlns.com/foaf/0.1/BinFeatures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/BinFeatures> <http://www.w3.org/2000/01/rdf-schema#comment> "features of the bins like contain cigratte butt container" .
+<http://xmlns.com/foaf/0.1/BinFeatures> <http://www.w3.org/2000/01/rdf-schema#label> "Bin Features" .
+# 
+# http://xmlns.com/foaf/0.1/BinTypeMapping
+<http://xmlns.com/foaf/0.1/BinTypeMapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/BinTypeMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "contains information bin type id and type of bin" .
+<http://xmlns.com/foaf/0.1/BinTypeMapping> <http://www.w3.org/2000/01/rdf-schema#label> "Bin Type Mapping" .
+# 
+# http://xmlns.com/foaf/0.1/DCCArea
+<http://xmlns.com/foaf/0.1/DCCArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/DCCArea> <http://www.w3.org/2000/01/rdf-schema#comment> "contains dcc area as north, south, cnetral,etc" .
+<http://xmlns.com/foaf/0.1/DCCArea> <http://www.w3.org/2000/01/rdf-schema#label> "DCC Area" .
+# 
+# http://xmlns.com/foaf/0.1/Language
+<http://xmlns.com/foaf/0.1/Language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Language> <http://www.w3.org/2000/01/rdf-schema#comment> "Language of street name" .
+<http://xmlns.com/foaf/0.1/Language> <http://www.w3.org/2000/01/rdf-schema#label> "Language" .
+# 
+# http://xmlns.com/foaf/0.1/Street
+<http://xmlns.com/foaf/0.1/Street> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Street> <http://www.w3.org/2000/01/rdf-schema#comment> "contains information about streets" .
+<http://xmlns.com/foaf/0.1/Street> <http://www.w3.org/2000/01/rdf-schema#label> "Street" .
+# 
+# http://xmlns.com/foaf/0.1/StreetClassCode
+<http://xmlns.com/foaf/0.1/StreetClassCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/StreetClassCode> <http://www.w3.org/2000/01/rdf-schema#comment> "information about street class coding as national highway" .
+<http://xmlns.com/foaf/0.1/StreetClassCode> <http://www.w3.org/2000/01/rdf-schema#label> "Street Class Mapping" .
+# 
+# http://xmlns.com/foaf/0.1/StreetFeatures
+<http://xmlns.com/foaf/0.1/StreetFeatures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/StreetFeatures> <http://www.w3.org/2000/01/rdf-schema#comment> "information about street features" .
+<http://xmlns.com/foaf/0.1/StreetFeatures> <http://www.w3.org/2000/01/rdf-schema#label> "Street Features" .
+# 
+# http://xmlns.com/foaf/0.1/SurfaceType
+<http://xmlns.com/foaf/0.1/SurfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/SurfaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "information about street surface mapping such as asphalt,etc" .
+<http://xmlns.com/foaf/0.1/SurfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "Surface Type Mapping" .
+# 
+# http://xmlns.com/foaf/0.1/ZonalArea
+<http://xmlns.com/foaf/0.1/ZonalArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/ZonalArea> <http://www.w3.org/2000/01/rdf-schema#comment> "information about bids area and CBD area" .
+<http://xmlns.com/foaf/0.1/ZonalArea> <http://www.w3.org/2000/01/rdf-schema#label> "Zonal Area" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid2 <http://www.w3.org/2002/07/owl#members> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/AccessibilityArea> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Bin> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/BinFeatures> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/BinTypeMapping> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/DCCArea> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Language> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Street> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/StreetClassCode> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/StreetFeatures> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/SurfaceType> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/ZonalArea> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# Generated by the OWL API (version 5.1.11) https://github.com/owlcs/owlapi/
