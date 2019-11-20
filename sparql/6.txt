@@ -11,4 +11,4 @@ SELECT ?streetName(COUNT(*) AS ?binCount) ?lineLength (xsd:float(?binCount)*xsd:
     FILTER (regex(str(?temp1), "bin"))
     }
     GROUP BY ?streetName ?binCount ?lineLength
-    ORDER BY ?binDensity
+    ORDER BY ?streetName 

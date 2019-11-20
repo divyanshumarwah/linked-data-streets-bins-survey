@@ -1,0 +1,13 @@
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX rdf-schema:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf-syntax-ns:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?streetName (COUNT(*) AS ?binCount) ?yearBuilt
+    WHERE {
+    ?temp1  rdf-schema:binNo ?binNo.
+	?temp1  rdf-schema:street ?streetName
+	BIND(IRI(CONCAT("http://www.example.org/street-features/", ENCODE_FOR_URI(?streetName))) AS ?streetFeaturesURI)
+    ?streetFeaturesURI  foaf:yearBuilt ?yearBuilt.
+	FILTER (regex(str(?temp1), "bin") && xsd:float(?yearBuilt)>0 && xsd:float(?yearBuilt)<=2000)
+	}
+	GROUP BY ?streetName ?binCount ?yearBuilt
+        ORDER BY ?streetName
