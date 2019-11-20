@@ -1,0 +1,14 @@
+ PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+    PREFIX rdf-schema:<http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf-syntax-ns:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?streetName ?streetClassName ?binNo
+    WHERE {
+    ?temp1  rdf-schema:binNo ?binNo.
+    ?temp1  rdf-schema:street ?streetName.
+    BIND(IRI(CONCAT("http://www.example.org/bin-features/", ?binNo)) AS ?binFeaturesURI)
+    ?binFeaturesURI  foaf:damaged ?isDamaged.
+    FILTER (regex(str(?temp1), "bin/") && regex(str(?isDamaged), "TRUE"))
+    BIND(IRI(CONCAT("http://www.example.org/street/", ENCODE_FOR_URI(?streetName))) AS ?streetNameURI)
+    ?streetNameURI  rdf-schema:streetClassCode ?streetClassCode.
+    ?streetClassCode  foaf:streetClass ?streetClassName.
+    }
