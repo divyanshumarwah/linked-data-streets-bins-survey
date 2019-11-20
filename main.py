@@ -36,7 +36,7 @@ def query_two():
 
 @app.route("/query/3")
 def query_three():
-    question = "Where the damaged bins are located along with the street type of the corresponding street?"
+    question = "Where the damaged bins are located along with the surface type of the corresponding street?"
     with open('sparql/3.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)
@@ -111,6 +111,17 @@ def query_nine():
         results = sparql.query().convert()
 
     return render_template("index.html", results=results, question=question, path='/query/9', query=query)
+
+@app.route("/query/10")
+def query_ten():
+    question = "Where the damaged bins are located along with the street type of the corresponding street?"
+    with open('sparql/10.txt','r') as queryData:
+        query = str(queryData.read())
+        sparql.setQuery(query)
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+
+    return render_template("index.html", results=results, question=question, path='/query/10', query=query)
 
 
 if __name__ == "__main__":  # on running python app.py
