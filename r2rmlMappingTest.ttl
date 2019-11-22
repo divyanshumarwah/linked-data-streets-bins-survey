@@ -1,8 +1,6 @@
 # Mapping created using Juma editor.
   @prefix rr: <http://www.w3.org/ns/r2rml#> .
   @prefix rrf: <http://kdeg.scss.tcd.ie/ns/rrf#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -22,7 +20,7 @@
     ];
 
      rr:objectMap [
-      rr:column "BIN_TYPE";
+      rr:template "http://www.example.org/bin-type/{BIN_TYPE}";
      ];
   ];
   rr:predicateObjectMap [
@@ -31,7 +29,7 @@
     ];
 
      rr:objectMap [
-      rr:column "STREET";
+      rr:template "http://www.example.org/street/STREET}";
      ];
   ];
   rr:predicateObjectMap [
@@ -93,11 +91,11 @@
   ];
   rr:predicateObjectMap [
     rr:predicateMap [
-      rr:constant rdfs:binNo;
+      rr:constant rdfs:bin;
     ];
 
      rr:objectMap [
-      rr:column "BIN_NO";
+      rr:template "http://www.example.org/bin/{BIN_NO}";
      ];
   ];
   .
@@ -168,11 +166,11 @@
   ];
   rr:predicateObjectMap [
     rr:predicateMap [
-      rr:constant rdfs:binNo;
+      rr:constant rdfs:bin;
     ];
 
      rr:objectMap [
-      rr:column "BIN_NO";
+      rr:template "http://www.example.org/bin/{BIN_NO}";
      ];
   ];
   .
@@ -189,20 +187,20 @@
 
   rr:predicateObjectMap [
     rr:predicateMap [
+      rr:constant rdfs:bin;
+    ];
+
+     rr:objectMap [
+      rr:template "http://www.example.org/bin/{BIN_NO}";
+     ];
+  ];
+  rr:predicateObjectMap [
+    rr:predicateMap [
       rr:constant foaf:bidsArea;
     ];
 
      rr:objectMap [
       rr:column "BIDS_AREA";
-     ];
-  ];
-  rr:predicateObjectMap [
-    rr:predicateMap [
-      rr:constant rdfs:binNo;
-    ];
-
-     rr:objectMap [
-      rr:column "BIN_NO";
      ];
   ];
   rr:predicateObjectMap [
@@ -222,7 +220,7 @@
   ];
 
    rr:subjectMap [
-      rr:template "http://www.example.org/street/{BIN_NO}";
+      rr:template "http://www.example.org/street/STREET}";
       rr:class foaf:Street;
    ];
 
@@ -232,7 +230,7 @@
     ];
 
      rr:objectMap [
-      rr:column "STREET";
+      rr:template "http://www.example.org/street/{STREET}";
      ];
   ];
   rr:predicateObjectMap [
@@ -267,7 +265,6 @@
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
 
   <#TriplesMapTriplesMapbin_type_mapping>
   rr:logicalTable [
@@ -302,7 +299,6 @@
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
 
   <#TriplesMapTriplesMapDCC_mapping>
   rr:logicalTable [
@@ -337,7 +333,6 @@
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
 
   <#TriplesMapTriplesMapstreet_surface_mapping>
   rr:logicalTable [
@@ -372,7 +367,6 @@
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
 
   <#TriplesMapTriplesMapstreet_class_mapping>
   rr:logicalTable [
@@ -407,7 +401,6 @@
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix csv: <http://example.org/csv/> .
 
   <#TriplesMapTriplesMapstreets>
   rr:logicalTable [
@@ -415,7 +408,7 @@
   ];
 
    rr:subjectMap [
-      rr:template "http://www.example.org/street/{STREET_NAME}";
+      rr:template "http://www.example.org/street/{STREET}";
       rr:class foaf:Street;
    ];
 
@@ -425,16 +418,7 @@
     ];
 
      rr:objectMap [
-      rr:column "STREET_NAME";
-     ];
-  ];
-  rr:predicateObjectMap [
-    rr:predicateMap [
-      rr:constant foaf:Irish;
-    ];
-
-     rr:objectMap [
-      rr:column "IRISH";
+      rr:column "STREET";
      ];
   ];
   rr:predicateObjectMap [
@@ -452,7 +436,7 @@
     ];
 
      rr:objectMap [
-      rr:column "STREET_CLASS_CODE";
+      rr:template "http://www.example.org/street-class-code/{STREET_CLASS_CODE}";
      ];
   ];
   rr:predicateObjectMap [
@@ -461,7 +445,37 @@
     ];
 
      rr:objectMap [
-      rr:column "SURFACE_TYPE_CODE";
+      rr:template "http://www.example.org/surface-type/{SURFACE_TYPE_CODE}";
+     ];
+  ];
+  .
+
+  <#TriplesMap12>
+  rr:logicalTable [
+    rr:tableName "streets";
+  ];
+
+   rr:subjectMap [
+      rr:template "http://www.example.org/language/{STREET}";
+      rr:class foaf:Language;
+   ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [
+      rr:constant foaf:English;
+    ];
+
+     rr:objectMap [
+      rr:column "STREET";
+     ];
+  ];
+  rr:predicateObjectMap [
+    rr:predicateMap [
+      rr:constant foaf:Irish;
+    ];
+
+     rr:objectMap [
+      rr:column "IRISH";
      ];
   ];
   .
@@ -472,7 +486,7 @@
   ];
 
    rr:subjectMap [
-      rr:template "http://www.example.org/street-features/{STREET_NAME}";
+      rr:template "http://www.example.org/street-features/{STREET}";
       rr:class foaf:StreetFeatures;
    ];
 
@@ -482,7 +496,7 @@
     ];
 
      rr:objectMap [
-      rr:column "STREET_NAME";
+      rr:template "http://www.example.org/street/{STREET}";
      ];
   ];
   rr:predicateObjectMap [
