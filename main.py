@@ -114,7 +114,7 @@ def query_nine():
 
 @app.route("/query/10")
 def query_ten():
-    question = "Where the damaged bins are located along with the street type of the corresponding street?"
+    question = "Where the damaged bins are located along with the surface type of the corresponding street?"
     with open('sparql/10.txt','r') as queryData:
         query = str(queryData.read())
         sparql.setQuery(query)

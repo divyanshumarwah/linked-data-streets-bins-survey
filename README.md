@@ -1,3 +1,16 @@
+## Assignment Deliverables
+```
+1. OWL ontology model: /documentation/index-en.html
+2. Documented R2RML mappings: /documentation/index-en.html   || Root: r2rmlMappingTest.ttl
+3. Documented SPARQL queries: /documentation/index-en.html   || Root: /sparql
+4. Application code for query interface: Root
+5. Original Dateset: /original_dateset
+6. Uplifted Dataset: /uplifted_Dataset
+7. Uplifted TTL: Root: upliftedDataset.ttl
+8. Technical Report: Root: Technical Report.pdf
+9. Self Reflection Report: Self Reflection Report.pdf
+```
+
 #  Interactive ontology-driven application
 
 A survey on types of Bins in and around Dublin City Center.
